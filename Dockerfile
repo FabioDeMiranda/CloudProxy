@@ -8,11 +8,11 @@ WORKDIR /home/node/flaresolverr
 
 COPY package*.json ./
 USER node
-RUN PUPPETEER_PRODUCT=firefox npm install
+RUN PUPPETEER_PRODUCT=chrome npm install
 COPY --chown=node:node . .
 
-ENV LOG_LEVEL=info
-ENV LOG_HTML=
+ENV LOG_LEVEL=debug
+ENV LOG_HTML=true
 ENV PORT=8191
 ENV HOST=0.0.0.0
 
